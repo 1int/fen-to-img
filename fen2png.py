@@ -4,8 +4,12 @@ from PIL import Image
 
 class DrawImage:
     def __init__(self, board, fmt, dest, fname):
-        self.result = Image.open(RESOURCES + "board.png").resize(BOARD_SIZE)
-        self.board = board
+
+        if board.move == 'w':
+            self.result = Image.open(RESOURCES + "board.png").resize(BOARD_SIZE)
+        else:
+            self.result = Image.open(RESOURCES + "boardb.png").resize(BOARD_SIZE)
+        self.board = board.board
         self.fmt = fmt
         self.fname = fname
         self.dest = dest
@@ -23,7 +27,7 @@ class DrawImage:
         C = square[1] * SQUARE_SIZE
         self.result.paste(piece, (R, C), piece)
 
-    def create(self):  # Fix orientation of board
+    def create(self):
         for i in range(8):
             for j in range(8):
                 if self.board[i][j]:
@@ -39,6 +43,7 @@ class Board:
         self.fen = fen
         self.isvalid = self.isValidFEN()
         self.board = None
+        self.move = fen[1]
         if self.isvalid:
             self.board = self.FENtoBoard()
 
@@ -64,6 +69,11 @@ class Board:
                 else:
                     board[pos][i] = FEN_PIECES[square]
                     pos += 1
+
+        if self.move == "b":
+            for i in range(4):
+                for j in range(8):
+                    board[i][j], board[8-i-1][8-j-1] = board[8-i-1][8-j-1],  board[i][j]
         return board
 
     def isInt(self, value):

@@ -26,8 +26,7 @@ def main():
             # Handle if directory is not valid
             os.mkdir(args.folder)
             print("Creating new directory: {}".format(args.folder))
-        boardGrid = fen.board
-        boardImg = DrawImage(boardGrid, args.fmt, args.folder, args.filename)
+        boardImg = DrawImage(fen, args.fmt, args.folder, args.filename)
         boardImg.create()
         boardImg.to_image()
         print(
