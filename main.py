@@ -28,6 +28,7 @@ def main():
             print("Creating new directory: {}".format(args.folder))
         boardImg = DrawImage(fen, args.fmt, args.folder, args.filename)
         boardImg.create()
+        boardImg.applyWatermark()
         boardImg.to_image()
         print(
             "Completed! File created in {}/{}.{}".format(

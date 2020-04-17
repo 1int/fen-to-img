@@ -1,6 +1,6 @@
 from constants import *
 from PIL import Image
-
+import os.path
 
 class DrawImage:
     def __init__(self, board, fmt, dest, fname):
@@ -33,6 +33,14 @@ class DrawImage:
                 if self.board[i][j]:
                     piece = self.open_image(self.board[i][j])
                     self.insert(piece, (i, j))
+
+    def applyWatermark(self):
+        if os.path.isfile(WATERMARK):
+            watermark = Image.open(WATERMARK)
+            mask = watermark.convert('L').point(lambda x: min(x,12))
+            watermark.putalpha(mask)
+
+            self.result.paste(watermark, (0,0), watermark)
 
     def to_image(self):
         self.result.save("{}/{}.{}".format(self.dest, self.fname, self.fmt))
