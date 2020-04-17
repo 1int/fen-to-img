@@ -39,4 +39,4 @@ Original repo:
 
 This repo:
 
-![rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2](images/example-new.png  =400x400 "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2")
+<img src="https://github.com/1int/fen-to-img/blob/master/images/example-new.png" width="500" height="500" />
