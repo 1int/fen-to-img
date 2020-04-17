@@ -6,10 +6,10 @@ fen-to-img is a simple CLI for converting FEN strings to image files.
 ## What's new in this fork
 
 I've added a few features I lacked in the original project:
-    - migrated to python3 to avoid annoying deprecation messages
-    - introduced board orientation (changes according to whose move is next)
-    - improved resources quality (2x size)
-    - added watermark support 
+- migrated to python3 to avoid annoying deprecation messages
+- introduced board orientation (changes according to whose move is next)
+- improved resources quality (2x size)
+- added watermark support 
     
 ## Install
 Clone this repo
@@ -39,4 +39,4 @@ Original repo:
 
 This repo:
 
-![rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2](images/example-new.png  "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2")
+![rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2](images/example-new.png  =400x400 "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2")
